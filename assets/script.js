@@ -24,7 +24,7 @@ var text6 = document.getElementById("6pm-text");
 
 function colorCode () {
     var currentTime = moment().format('hh:mm:ss a');
-    console.log(currentTime);
+    //console.log(currentTime);
 
     if (currentTime < '09:00am') {
         text9.classList.add("future");    
@@ -112,9 +112,16 @@ function colorCode () {
 colorCode();
 
 
-
-// include 14 time blocks (9am-10pm) 
-//time blocks incude; the hour, an input area, and a save button
+var btn9 = document.querySelector("#save-button9");
+var btn10 = document.querySelectorAll("#save-button10");
+var btn11 = document.querySelectorAll("#save-button11");
+var btn12 = document.querySelectorAll("#save-button12");
+var btn1 = document.querySelectorAll("#save-button1");
+var btn2 = document.querySelectorAll("#save-button2");
+var btn3 = document.querySelectorAll("#save-button3");
+var btn4 = document.querySelectorAll("#save-button4");
+var btn5 = document.querySelectorAll("#save-button5");
+var btn6 = document.querySelectorAll("#save-button6");
 
 //time blocks are color coded depending on what hour in the day it is currently
 
