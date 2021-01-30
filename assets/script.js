@@ -25,95 +25,36 @@ var text4Input = document.querySelector("#fourtext");
 var text5Input = document.querySelector("#fivetext");
 var text6Input = document.querySelector("#sixtext");
 
+var hour9 = $("#9");
+var hour10 = $("#10");
+var hour11 = $("#11");
+var hour12 = $("#12");
+var hour1 = $("#13");
+var hour2 = $("#14");
+var hour3 = $("#15");
+var hour4 = $("#16");
+var hour5 = $("#17");
+var hour6 = $("#18");
+var time = moment();
+
+
 
 //Depending on the time of the day; the hour blocks will change color
-function colorCode () {
-    var currentTime = moment().format('hh:mm:ss a');
-    console.log(currentTime);
+function colorCode() {
+    hour = time.hours();
+    $(".hour-block").each(function () {
+        var thisHour = parseInt($(this).attr("id"));
 
-    if (currentTime < '09:00am') {
-        text9Input.classList.add("future");    
-    } else if (currentTime > '09:00am' && currentTime < '10:00am') {
-        text9Input.classList.add("present");
-    } else {
-        text9Input.classList.add("past");
-    }
+        if (thisHour > hour) {
+            $(this).addClass("future");
+        } else if (thisHour === hour) {
+            $(this).addClass("present");
+        } else {
+            $(this).addClass("past");
+        }
+    })
+}
 
-    if (currentTime < '10:00am') {
-        text10Input.classList.add("future");    
-    } else if (currentTime > '10:00am' && currentTime < '11:00am') {
-        text10Input.classList.add("present");
-    } else {
-        text10Input.classList.add("past");
-    }
-
-    if (currentTime < '11:00am') {
-        text11Input.classList.add("future");    
-    } else if (currentTime > '11:00am' && currentTime < '12:00pm') {
-        text11Input.classList.add("present");
-    } else {
-        text11Input.classList.add("past");
-    }
-
-    if (currentTime < '12:00pm') {
-        text12Input.classList.add("future");    
-    } else if (currentTime > '12:00pm' && currentTime < '01:00pm') {
-        text12Input.classList.add("present");
-    } else {
-        text12Input.classList.add("past");
-    }
-
-    if (currentTime < '01:00pm') {
-        text1Input.classList.add("future");    
-    } else if (currentTime > '01:00pm' && currentTime < '02:00pm') {
-        text1Input.classList.add("present");
-    } else {
-        text1Input.classList.add("past");
-    }
-
-    if (currentTime < '02:00pm') {
-        text2Input.classList.add("future");    
-    } else if (currentTime > '02:00pm' && currentTime < '03:00pm') {
-        text2Input.classList.add("present");
-    } else {
-        text2Input.classList.add("past");
-    }
-
-    if (currentTime < '03:00pm') {
-        text3Input.classList.add("future");    
-    } else if (currentTime > '03:00pm' && currentTime < '04:00pm') {
-        text3Input.classList.add("present");
-    } else {
-        text3Input.classList.add("past");
-    }
-
-    if (currentTime < '04:00pm') {
-        text4Input.classList.add("future");    
-    } else if (currentTime > '04:00pm' && currentTime < '05:00pm') {
-        text4Input.classList.add("present");
-    } else {
-        text4Input.classList.add("past");
-    }
-
-    if (currentTime < '05:00pm') {
-        text5Input.classList.add("future");    
-    } else if (currentTime > '05:00pm' && currentTime < '06:00pm') {
-        text5Input.classList.add("present");
-    } else {
-        text5Input.classList.add("past");
-    }
-
-    if (currentTime < '06:00pm') {
-        text6Input.classList.add("future");    
-    } else if (currentTime > '06:00pm' && currentTime < '07:00pm') {
-        text6Input.classList.add("present");
-    } else {
-        text6Input.classList.add("past");
-    } 
-
-};
-
-//run color code function
 colorCode();
 
 function init() {
