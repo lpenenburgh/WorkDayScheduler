@@ -1,29 +1,24 @@
 
 
 
-
-
-
-
-
 //current date will display in the jumbotron, under the header
-var currentDay = document.getElementById("currentDay"); 
+var currentDay = $("#currentDay"); 
 
-$(currentDay).text(moment().format('MMMM Do YYYY, h:mm:ss a'));
+$(currentDay).text(moment().format('MMMM Do YYYY, h:mm a'));
 
 
 
 //textarea variables grabbed
-var text9Input = document.querySelector("#ninetext"); 
-var text10Input = document.querySelector("#tentext");
-var text11Input = document.querySelector("#eleventext");
-var text12Input = document.querySelector("#twelvetext");
-var text1Input = document.querySelector("#onetext");
-var text2Input = document.querySelector("#twotext");
-var text3Input = document.querySelector("#threetext");
-var text4Input = document.querySelector("#fourtext");
-var text5Input = document.querySelector("#fivetext");
-var text6Input = document.querySelector("#sixtext");
+var text9Input = $("#ninetext"); 
+var text10Input = $("#tentext");
+var text11Input = $("#eleventext");
+var text12Input = $("#twelvetext");
+var text1Input = $("#onetext");
+var text2Input = $("#twotext");
+var text3Input = $("#threetext");
+var text4Input = $("#fourtext");
+var text5Input = $("#fivetext");
+var text6Input = $("#sixtext");
 
 var hour9 = $("#9");
 var hour10 = $("#10");
@@ -62,48 +57,63 @@ function init() {
 }
 
 
+var userInput = {
+    text9Input: $.trim($("#ninetext").val()),
+    text10Input: $.trim($("#tentext").val()),
+    text11Input: $.trim($("#eleventext").val()),
+    text12Input: $.trim($("#twelvetext").val()),
+    text1Input: $.trim($("#onetext").val()),
+    text2Input: $.trim($("#twotext").val()),
+    text3Input: $.trim($("#threetext").val()),
+    text4Input: $.trim($("#fourtext").val()),
+    text5Input: $.trim($("#fivetext").val()),
+    text6Input: $.trim($("#sixtext").val())
+};
 
 function saveUserInput() {
+
     var userInput = {
-        text9Input: text9Input.value.trim(),
-        text10Input: text10Input.value.trim(),
-        text11Input: text11Input.value.trim(),
-        text12Input: text12Input.value.trim(),
-        text1Input: text1Input.value.trim(),
-        text2Input: text2Input.value.trim(),
-        text3Input: text3Input.value.trim(),
-        text4Input: text4Input.value.trim(),
-        text5Input: text5Input.value.trim(),
-        text6Input: text6Input.value.trim()
+        text9Input: $.trim($("#ninetext").val()),
+        text10Input: $.trim($("#tentext").val()),
+        text11Input: $.trim($("#eleventext").val()),
+        text12Input: $.trim($("#twelvetext").val()),
+        text1Input: $.trim($("#onetext").val()),
+        text2Input: $.trim($("#twotext").val()),
+        text3Input: $.trim($("#threetext").val()),
+        text4Input: $.trim($("#fourtext").val()),
+        text5Input: $.trim($("#fivetext").val()),
+        text6Input: $.trim($("#sixtext").val())
     };
+
 
     localStorage.setItem("userInput", JSON.stringify(userInput));
     console.log(userInput);
 }
 
-
+console.log(userInput);
 
 function renderUserInput() {
     var lastInput = JSON.parse(localStorage.getItem("userInput"));
+  //  console.log(lastInput);
 
     if (lastInput !== null) {
-        document.getElementById("ninetext").innerHTML = lastInput.text9Input;
-        document.getElementById("tentext").innerHTML = lastInput.text10Input;
-        document.getElementById("eleventext").innerHTML = lastInput.text11Input;
-        document.getElementById("twelvetext").innerHTML = lastInput.text12Input;
-        document.getElementById("onetext").innerHTML = lastInput.text1Input;
-        document.getElementById("twotext").innerHTML = lastInput.text2Input;
-        document.getElementById("threetext").innerHTML = lastInput.text3Input;
-        document.getElementById("fourtext").innerHTML = lastInput.text4Input;
-        document.getElementById("fivetext").innerHTML = lastInput.text5Input;
-        document.getElementById("sixtext").innerHTML = lastInput.text6Input;
+        $("#ninetext").html(lastInput.text9Input);
+        $("#tentext").html(lastInput.text10Input);
+        $("#eleventext").html(lastInput.text11Input);
+        $("#twelvetext").html(lastInput.text12Input);
+        $("#onetext").html(lastInput.text1Input);
+        $("#twotext").html(lastInput.text2Input);
+        $("#threetext").html(lastInput.text3Input);
+        $("#fourtext").html(lastInput.text4Input);
+        $("#fivetext").html(lastInput.text5Input);
+        $("#sixtext").html(lastInput.text6Input);
     } else {
         return;
     }
 };
 
 //buttons from html
-var saveButton = document.querySelectorAll("#savebutton");
+var saveButton = $("#savebutton");
 
 
 //event listener for save buttons. When clicked it will save user input to local storage, and then get from local storage to render on the page.
