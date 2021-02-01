@@ -2,24 +2,12 @@
 
 
 //current date will display in the jumbotron, under the header
-var currentDay = $("#currentDay"); 
+var currentDay = $("#currentDay");
 
 $(currentDay).text(moment().format('MMMM Do YYYY, h:mm a'));
 
 
-
-//textarea variables grabbed
-var text9Input = $("#ninetext"); 
-var text10Input = $("#tentext");
-var text11Input = $("#eleventext");
-var text12Input = $("#twelvetext");
-var text1Input = $("#onetext");
-var text2Input = $("#twotext");
-var text3Input = $("#threetext");
-var text4Input = $("#fourtext");
-var text5Input = $("#fivetext");
-var text6Input = $("#sixtext");
-
+// variables for time blocks
 var hour9 = $("#9");
 var hour10 = $("#10");
 var hour11 = $("#11");
@@ -52,23 +40,8 @@ function colorCode() {
 
 colorCode();
 
-function init() {
-    renderUserInput();
-}
 
-
-var userInput = {
-    text9Input: $.trim($("#ninetext").val()),
-    text10Input: $.trim($("#tentext").val()),
-    text11Input: $.trim($("#eleventext").val()),
-    text12Input: $.trim($("#twelvetext").val()),
-    text1Input: $.trim($("#onetext").val()),
-    text2Input: $.trim($("#twotext").val()),
-    text3Input: $.trim($("#threetext").val()),
-    text4Input: $.trim($("#fourtext").val()),
-    text5Input: $.trim($("#fivetext").val()),
-    text6Input: $.trim($("#sixtext").val())
-};
+// function to save user input to local storage
 
 function saveUserInput() {
 
@@ -82,20 +55,19 @@ function saveUserInput() {
         text3Input: $.trim($("#threetext").val()),
         text4Input: $.trim($("#fourtext").val()),
         text5Input: $.trim($("#fivetext").val()),
-        text6Input: $.trim($("#sixtext").val())
-    };
+        text6Input: $.trim($("#sixtext").val()),
+    }
 
-
-    localStorage.setItem("userInput", JSON.stringify(userInput));
+    window.localStorage.setItem("events", JSON.stringify(userInput));
     console.log(userInput);
 }
 
-console.log(userInput);
+//function to show user input on the page after its been locally stored. Stays there when page refreshed.
+
 
 function renderUserInput() {
-    var lastInput = JSON.parse(localStorage.getItem("userInput"));
-  //  console.log(lastInput);
-
+    var lastInput = JSON.parse(window.localStorage.getItem("events"));
+    
     if (lastInput !== null) {
         $("#ninetext").html(lastInput.text9Input);
         $("#tentext").html(lastInput.text10Input);
@@ -107,24 +79,19 @@ function renderUserInput() {
         $("#fourtext").html(lastInput.text4Input);
         $("#fivetext").html(lastInput.text5Input);
         $("#sixtext").html(lastInput.text6Input);
-    } else {
-        return;
     }
-};
+}
 
 //buttons from html
-var saveButton = $("#savebutton");
+var saveButton = $("button");
+
+//event listener for save buttons. When clicked it will save user input to local storage.
+saveButton.click(saveUserInput);
+// displays what was in local storage to display on the page
+renderUserInput();
 
 
-//event listener for save buttons. When clicked it will save user input to local storage, and then get from local storage to render on the page.
-$(saveButton).on("click", function(event) {
-    event.preventDefault();
-    saveUserInput();
-    renderUserInput();
-});
 
-//Fires when page is loaded, will also render user input on the html
-init()
 
 
 
