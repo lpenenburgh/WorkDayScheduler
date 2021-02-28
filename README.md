@@ -27,6 +27,13 @@ My goal for this project was to create a simple hourly scheduler for the work da
  <br>
  <a href="https://fonts.google.com/">Google Fonts</a>
 
+## Collaborators 
+Lauren Penenburgh
+<a href="https://github.com/lpenenburgh">Github</a>
+<a href="https://lpenenburgh.github.io/responsive-portfolio/">Portfolio</a>
+<a href="https://www.linkedin.com/in/lauren-penenburgh-00852a99/">LinkedIn</a>
+
+
 ## License
 MIT License
 
