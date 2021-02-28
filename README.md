@@ -20,6 +20,12 @@ My goal for this project was to create a simple hourly scheduler for the work da
  <a href="https://api.jquery.com/">jQuery</a>
  <br>
  <a href="https://momentjs.com">Moment.js</a>
+ <br>
+ <a href="https://getbootstrap.com/">Bootstrap</a>
+ <br>
+ <a href="https://fontawesome.com/start">Font Awesome</a>
+ <br>
+ <a href="https://fonts.google.com/">Google Fonts</a>
 
 ## License
 MIT License
