@@ -12,8 +12,13 @@ My goal for this project was to create a simple hourly scheduler for the work da
  <br>
  <img src="https://i.imgur.com/IoJtaDD.png" width="600">
 
- ### Credits
- <a href="https://momentjs.com">Moment.js</a>
 
  ### Deployed Application
  https://lpenenburgh.github.io/WorkDayScheduler/
+
+ ### Technologies Used
+ <a href="https://api.jquery.com/">jQuery</a>
+ <br>
+ <a href="https://momentjs.com">Moment.js</a>
+
+
