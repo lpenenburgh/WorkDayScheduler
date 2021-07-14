@@ -37,6 +37,9 @@ body {
   #currentDay {
     text-align: center;
     padding: 20px;
+    font-weight: bolder;
+    color: #7180AC;
+    font-size: 25px;
   }
   
   .description{
