@@ -16,9 +16,13 @@ body {
   .jumbotron {
     text-align: center;
     background-color: transparent;
-    color: black;
+    color:white;
     border-radius: 0;
     border-bottom: 10px solid black;
+    background:url(./joanna-kosinska-bF2vsubyHcQ-unsplash.jpg);
+    background-size: cover;
+    
+    
   }
   
   .description{
