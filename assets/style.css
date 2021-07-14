@@ -46,7 +46,9 @@ body {
   
   .hour {
     background-color: #ffffff;
-    color: #000000;
+    color: #2B4570;
+    font-size: 20px;
+    font-weight: bolder;
     border-top: 1px dashed #000000;
   }
   
@@ -67,7 +69,6 @@ body {
   
   .saveBtn {
     border-left: 1px solid black;
-   
     background-color: #2B4570;
     color: white;
   }
