@@ -19,14 +19,24 @@ body {
 
   .jumbotron {
     text-align: center;
-    background-color: transparent;
     color:white;
+    text-shadow: 2px 2px 4px #000000;
     border-radius: 0;
     border-bottom: 10px solid black;
     background:url(./joanna-kosinska-bF2vsubyHcQ-unsplash.jpg);
     background-size: cover;
     
     
+  }
+
+  img {
+    width:55%;
+    height:auto;
+}
+
+  #currentDay {
+    text-align: center;
+    padding: 20px;
   }
   
   .description{
