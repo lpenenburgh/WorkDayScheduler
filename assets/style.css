@@ -13,6 +13,10 @@ body {
     padding: 10px;
   }
   
+::placeholder {
+  color: white;
+}
+
   .jumbotron {
     text-align: center;
     background-color: transparent;
@@ -52,20 +56,19 @@ body {
   }
   
   .present {
-    background-color: #ff6961;
+    background-color: #d9a302;
     color: white;
   }
   
   .future {
-    background-color: #77dd77;
+    background-color: #7180AC;
     color: white;
   }
   
   .saveBtn {
     border-left: 1px solid black;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color: #06AED5;
+   
+    background-color: #2B4570;
     color: white;
   }
   
